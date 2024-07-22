@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: 0;
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img src="assets/img/slide/umkm1.jpg" alt="Foto 1">
+        </div>
+        <div class="mySlides">
+            <img src="assets/img/slide/umkm2.jpg" alt="Foto 2">
+        </div>
+        <div class="mySlides">
+            <img src="assets/img/slide/umkm3.jpg" alt="Foto 3">
+        </div>
+        <div class="mySlides">
+            <img src="assets/img/slide/umkm4.jpg" alt="Foto 3">
+        </div>
+        <div class="mySlides">
+            <img src="assets/img/slide/umkm5.jpg" alt="Foto 3">
+        </div>
+        <div class="mySlides">
+            <img src="assets/img/slide/umkm6.jpg" alt="Foto 3">
+        </div>
+		<div class="mySlides">
+            <img src="assets/img/slide/umkm7.jpg" alt="Foto 3">
+        </div>
+		<div class="mySlides">
+            <img src="assets/img/slide/umkm8.jpg" alt="Foto 3">
+        </div>
+		<div class="mySlides">
+            <img src="assets/img/slide/umkm9.jpg" alt="Foto 3">
+        </div>
+		<div class="mySlides">
+            <img src="assets/img/slide/umkm10.jpg" alt="Foto 3">
+        </div>
+    </div>
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Ganti foto setiap 3 detik
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>WebGIS UMKM Desa Sukorejo</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/img/logo.jpeg" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+		<style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        
+    </style>
+        <style>
+		.gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+		.accordion {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .accordion-item {
+            background: #e0f2e9;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .accordion-title {
+            padding: 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .accordion-content {
+            padding: 15px;
+            display: none;
+        }
+        .custom-button {
+            background-color: #0e4783; /* Warna latar belakang tombol */
+            color: #fff; /* Warna teks tombol */
+            width: 150px; /* Lebar tombol */
+            height: 50px; /* Tinggi tombol */
+            border: none;
+            border-radius: 5px; /* Sudut tombol dibulatkan */
+            font-size: 16px;
+            cursor: pointer;
+          }
+        
+          .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            } /* Menempatkan tombol di tengah halaman vertikal */
+            .iframe-container{
+                text-align: center;
+            }
+            .nav-item a:hover {
+  background-color:rgb(4, 188, 32);
+  }
+  button:hover {background-color:yellow;
+color:green;}
+#footer {
+    background-image: "assets/img/foto_umkm/background.jpg";
+    background-size: contain;
+}
+            .foottext h2 {  
+                color:white;
+                text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;}
+                .row {  
+                display: flex;
+                flex-wrap: wrap;
+                }
+                .kiri {
+                flex: 50%;
+                background-color:#f0593b;
+                padding: 20px;
+                }
+                .kanan {
+                flex: 50%;
+                background-color:#f1e233;
+                padding: 20px;
+                }
+          </style>
+              <style>
+                iframe {
+                    width: 550px; /* lebar iframe */
+                    height: 450px; /* tinggi iframe */
+                    border: none; /* Hilangkan border iframe */
+                    
+                }
+            </style>  
+              
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#pengenalan" style="color:yellow"><b>Pengenalan</b></a></li>
+						<li class="nav-item"><a class="nav-link" href="#dataumkmdusun" style="color:yellow"><b>Data UMKM per Dusun</b></a></li>
+						<li class="nav-item"><a class="nav-link" href="#penjelasanweb" style="color:yellow"><b>Penjelasan Web Map UMKM</b></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#webmap" style="color:yellow"><b>Web Map UMKM</b></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#rekomendasi" style="color:yellow"><b>Rekomendasi UMKM sesuai Jenisnya</b></a></li>
+						<li class="nav-item"><a class="nav-link" href="#gallery" style="color:yellow"><b>Gallery</b></a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+		
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading" style="color:white">Web GIS UMKM</div>
+                <div class="masthead-heading text-uppercase" style="color:yellow">Desa Sukorejo</div>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#pengenalan" style="color:red">Ayo Jelajahi!</a>
+            </div>
+        </header>
+		
+		
+        <!-- Pengenalan-->
+        <section class="page-section" id="pengenalan">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Pengenalan</h2>
+					<h3 class="section-subheading text-muted" style="color:green">Selamat datang di Website GIS UMKM Desa Sukorejo</h3>
+                    <h3 class="section-subheading text-muted">Nama Desa : Desa Sukorejo</h3>
+					<img src="Foto cakupan Sukorejo/Cakupansukorejo.png" alt="Deskripsi Foto 1" style="width: 40%; height: auto; border-radius: 8px;"><br><br><br>
+					<h3 class="section-subheading text-muted">Nama Kecamatan : Kecamatan Mertoyudan</h3>
+					<h3 class="section-subheading text-muted">Nama Kabupaten : Kabupaten Magelang</h3>
+					<img src="assets/img/logo_kab_mgl.png" alt="Deskripsi Foto 1" style="width: 10%; height: auto; border-radius: 8px;"><br>
+					<br><br><br><h3 class="section-subheading text-muted">Provinsi : Jawa Tengah</h3>
+					<img src="assets/img/Logo Provinsi Jawa Tengah.jpg" alt="Deskripsi Foto 1" style="width: 15%; height: auto; border-radius: 8px;">
+					<br><br><br>
+				
+				</div>
+                <div class="row text-center">
+				<div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-title">
+                <span>Apa itu Web GIS UMKM Desa?</span>
+                <span>+</span>
+            </div>
+            <div class="accordion-content">
+                <p style="text-align:justify">Web GIS UMKM Desa adalah platform interaktif yang dibuat untuk 
+						mendukung dan mempromosikan Usaha Mikro Kecil Menengah (UMKM) di desa. Ini memanfaatkan 
+						teknologi Sistem Informasi Geografis (SIG). Peta interaktif dan data geografis dimanfaatkan 
+						untuk memudahkan masyarakat, pemerintah, dan investor dalam menemukan serta memahami potensi 
+						UMKM di Desa Sukorejo.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-title">
+                <span>Mengapa Web GIS UMKM Penting?</span>
+                <span>+</span>
+            </div>
+            <div class="accordion-content">
+                <p style="text-align:justify">Untuk mempromosikan UMKM, transparasi data, 
+						pengambilan keputusan, dan akses informasi oleh masyarakat dan calon 
+						investor terhadap UMKM.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-title">
+                <span>Cara menggunakan Web GIS UMKM Desa Sukorejo</span>
+                <span>+</span>
+            </div>
+            <div class="accordion-content">
+                <p style="text-align:justify">Memanfaatkan peta interaktif untuk mengeksplorasi lokasi UMKM di Desa Sukorejo. 
+						Pergi ke bagian Hasil Web Map untuk mengakses web map UMKM. Untuk mengetahui UMKM yang dipetakan dalam web map, 
+						bisa menuju bagian UMKM di Desa Sukorejo pada Menu. Anda bisa mencari tahu UMKM rekomendasi sesuai jenis UMKM yang 
+						diinginkan, menggunakan fungsi bagian Rekomendasi UMKM.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.accordion-title').forEach(item => {
+            item.addEventListener('click', () => {
+                const content = item.nextElementSibling;
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+                item.querySelector('span:last-child').textContent = content.style.display === 'block' ? '-' : '+';
+            });
+        });
+    </script>
+                    
+        </section>
+		<section class="page-section" id="dataumkmdusun">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Data UMKM Dusun</h2>
+					<table>
+											<thead>
+												<tr>
+													<th style="background-color: #00ff00;">Dusun</th>
+													<th style="background-color: #00ff00;">Jumlah UMKM</th>
+													<th style="background-color: #00ff00;">Nama-nama UMKM</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Klentengan</td>
+													<td>25</td>
+													<td><br></td>
+												</tr>
+												<tr>
+													<td>Senden</td>
+													<td>30</td>
+													<td>Bandung</td>
+												</tr>
+												<tr>
+													<td>Bintaro</td>
+													<td>22</td>
+													<td>Peyek Bu Yah</td>
+												</tr>
+												<tr>
+													<td>Sarirejo</td>
+													<td>22</td>
+													<td>Surabaya</td>
+												</tr>
+												<tr>
+													<td>Bagongan</td>
+													<td>22</td>
+													<td>Berkah Jaya Souvenir<br>Warung Snack "Berkah Jaya"<br></td>
+												</tr>
+												<tr>
+													<td>Dogaten</td>
+													<td>22</td>
+													<td>Surabaya</td>
+												</tr>
+												<tr>
+													<td>Sukosari</td>
+													<td>22</td>
+													<td>Surabaya</td>
+												</tr>
+												<tr>
+													<td>Ganjuran</td>
+													<td>22</td>
+													<td>Jamur Gending<br></td>
+												</tr>
+												<tr>
+													<td>Bonjitan</td>
+													<td>22</td>
+													<td>Surabaya</td>
+												</tr>
+												<tr>
+													<td>Jonggrangan</td>
+													<td>22</td>
+													<td>Isi Toples "Oreo Snack"<br>Warung Makan dan Kue-Kue Basah Bu Sri<br>JB Frozen Food<br></td>
+												</tr>
+											</tbody>
+									</table>
+									<br>
+				</div>
+                
+            </div>
+        </section>
+		<section class="page-section" id="penjelasanweb">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Penjelasan Web Map</h2>
+				<p class="text-muted">Web map adalah peta yang bisa diakses menggunakan internet dan dihubungkan menggunakan browser web. Web map tidak hanya peta cetak yang didigitalkan, melainkan peta yang memungkinkan kita sebagai pengguna untuk melihat, berinteraksi, dan menganalisis data geografis secara online. Web map ini bersifat interaktif.</p>
+				</div>
+                <h2 style="text-align:center">Apa saja fitur yang disediakan dalam web map UMKM ini?</h2>
+            <div style="background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-10px)';" onmouseout="this.style.transform='translateY(0)';">
+        <div style="font-weight: bold; color: #e74c3c; font-size: 1.4em; margin-bottom: 10px; position: relative;">Zooming dan Panning:
+            <div style="content: ''; width: 50px; height: 4px; background: #e74c3c; position: absolute; bottom: -5px; left: 0;"></div>
+        </div>
+        <div style="margin-left: 20px; color: #34495e;">Anda bisa melakukan menggeser, memperkecil, dan memperbesar peta interaktif untuk melihat area tertentu sebagai fokus.</div>
+    </div>
+    <div style="background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-10px)';" onmouseout="this.style.transform='translateY(0)';">
+        <div style="font-weight: bold; color: #e74c3c; font-size: 1.4em; margin-bottom: 10px; position: relative;">Layer Management:
+            <div style="content: ''; width: 50px; height: 4px; background: #e74c3c; position: absolute; bottom: -5px; left: 0;"></div>
+        </div>
+        <div style="margin-left: 20px; color: #34495e;">Mampu untuk mengaktifkan dan menonaktifkan berbagai lapisan atau layer data, seperti lapisan jalan, bangunan, dan data demografis.</div>
+    </div>
+    <div style="background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-10px)';" onmouseout="this.style.transform='translateY(0)';">
+        <div style="font-weight: bold; color: #e74c3c; font-size: 1.4em; margin-bottom: 10px; position: relative;">Pop-ups dan Tooltips:
+            <div style="content: ''; width: 50px; height: 4px; background: #e74c3c; position: absolute; bottom: -5px; left: 0;"></div>
+        </div>
+        <div style="margin-left: 20px; color: #34495e;">Informasi yang akan muncul saat Anda menekan atau mengarahkan kursor ke sebuah titik di peta, seperti point lokasi UMKM.</div>
+    </div>
+    </div>
+	<h1 style="text-align:center">Berikut komponen Web Map dan fungsinya</h1>
+	<table>
+											<thead>
+												<tr>
+													<th style="background-color: #00ff00;">Komponen Web Map</th>
+													<th style="background-color: #00ff00;">Gambar</th>
+													<th style="background-color: #00ff00;">Fungsi</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Tombol "Lihat Peta"</td>
+													<td><img src="fungsi komponen web map/tombolbukamap.png"></td>
+													<td>Untuk membuka halaman web map atau untuk mengarahkan window menuju Web Map.</td>
+													
+												</tr>
+												
+											</tbody>
+									</table>
+    
+			</div>
+        </section>
+        <!--Hasil Web Map-->
+        <section class="page-section bg-light" id="webmap">
+            <h1 style="text-align: center;">Hasil Web Map</h1>
+            <div class="iframe-container">
+                <iframe src="https://ruthnad31.github.io/PROJECT_SIGWEB/" frameborder="0" style="border:0; width: 50%; height: 290px;" allowfullscreen></iframe>
+              </div>
+    <div class="button-container">
+        <!-- Tombol dengan fungsi onclick -->
+        <button class="custom-button" id = "tomb" onclick="navigateToEmbeddedWeb()">Lihat Peta</button>
+          </div>
+<script>
+    function navigateToEmbeddedWeb() {
+    // Mengganti lokasi (URL) dengan URL web yang di-embed
+    window.location.href = "https://ruthnad31.github.io/PROJECT_SIGWEB/";
+  }
+    </script>
+
+        </section>
+        <!--Section Rekomendasi-->
+        <section  id="rekomendasi">
+        <div class="row">
+        <div class="kiri">
+            <h2 class="section-heading text-uppercase" style="text-align: center;">Rekomendasi</h2>
+            <p>Pilihlah salah satu produk UMKM yang Anda inginkan dari pilihan di bawah ini. Kami akan memberikan rekomendasi UMKM untuk Anda</p>
+<form>
+  <input type="radio" name="kalimat" value="jenis1"> Makanan dan Minuman
+  <br>
+  <input type="radio" name="kalimat" value="jenis2"> Pertanian
+  <br>
+  <input type="radio" name="kalimat" value="jenis3"> Kerajinan Tangan 
+  <br>
+  <input type="radio" name="kalimat" value="jenis4"> Pakaian dan Tekstil
+  <br>
+  <input type="radio" name="kalimat" value="jenis5"> Furniture
+  <br>
+  <input type="radio" name="kalimat" value="jenis6"> Produk Kulit
+  <br>
+</form>
+
+<p id="hasil"></p>
+<script>
+  // Fungsi ini akan dipanggil saat salah satu radio button dipilih
+  function tampilkanKalimat() {
+    var pilihan = document.querySelector('input[name="kalimat"]:checked');
+    if (pilihan) {
+      var hasilElement = document.getElementById("hasil");
+      var kalimat = pilihan.value;
+      // Menggunakan switch untuk menampilkan kalimat berbeda berdasarkan pilihan
+      switch (kalimat) {
+        case "jenis1":
+          hasilElement.textContent = "Rekomendasi UMKM = Isi Toples Oreo Snack, Warung Snack Berkah Jaya, JB Frozen Food, Warung Makan Bu Sri, Warung Kulon Ndeso, Mie Gacor & Mie Ayam 99, Warung Gending";
+          break;
+        case "jenis2":
+          hasilElement.textContent = "Rekomendasi UMKM = Kelompok Ternak Puyuh Gemak Ripah";
+          break;
+        case "jenis3":
+          hasilElement.textContent = "Rekomendasi UMKM = Berkah Jaya Souvenir";
+          break;
+          case "menu4":
+          hasilElement.textContent = "Rekomendasi UMKM = Warmindo Maharasa 33, Warmindo Mekar Jaya, Warmindo Mekar Mulya, Warmindo Sami Asih";
+          break;
+          case "menu5":
+          hasilElement.textContent = "Rekomendasi UMKM = Warmindo Makcik";
+          break;
+          case "menu6":
+          hasilElement.textContent = "Rekomendasi UMKM = Warmindo Malatax";
+          break;
+          case "menu7":
+          hasilElement.textContent = "Rekomendasi Tempat Makan = Warmindo Palm Kuning";
+          break;
+          case "menu8":
+          hasilElement.textContent = "Rekomendasi Tempat Makan = Warmindo Pamungkas, Warmindo Sami Asih";
+          break;
+          case "menu9":
+          hasilElement.textContent = "Rekomendasi Tempat Makan = Warmindo Pamungkas";
+          break;
+          case "menu10":
+          hasilElement.textContent = "Rekomendasi Tempat Makan = Warmindo Permata";
+          break;
+          case "menu11":
+          hasilElement.textContent = "Rekomendasi Tempat Makan = Warmindo Prikitiuw 06";
+          break;
+          case "menu12":
+          hasilElement.textContent = "Rekomendasi Tempat Makan = Warmindo Raja Rasa 30";
+          break;
+          case "menu13":
+          hasilElement.textContent = "Rekomendasi Tempat Makan = Warmindo Raja Rasa 30";
+          break;
+          case "menu14":
+          hasilElement.textContent = "Rekomendasi Tempat Makan = Warmindo Sami Asih";
+          break;
+          case "menu15":
+          hasilElement.textContent = "Rekomendasi Tempat Makan = RM. Padang Djuang";
+          break;
+          case "menu16":
+          hasilElement.textContent = "Rekomendasi Tempat Makan = RM. Padang Djuang";
+          break;
+        default:
+          hasilElement.textContent = "";
+      }
+    }
+  }
+  
+  // Tambahkan event listener untuk mendeteksi perubahan pada radio button
+  var radioButtons = document.querySelectorAll('input[name="kalimat"]');
+  radioButtons.forEach(function(radio) {
+    radio.addEventListener("change", tampilkanKalimat);
+  });
+</script>
+        </div>
+        <div class ="kanan">
+            <iframe src="foto_slide/index.html"></iframe>
+        </div>
+        </section>
+        <div class="foottext">
+		<!-- Footer -->
+    <footer class="bg-dark text-white pt-4" id="gallery">
+        <div class="container">
+            <div class="row">
+                <!-- Nama Perusahaan dan Alamat -->
+                
+                </div>
+                <!-- Kontak -->
+                
+                <!-- Sosial Media (Opsional) -->
+                <div class="gallery">
+				<h1>Gallery</h1>
+        <img src="foto_gallery/galeri6.jpg" alt="Image 1">
+        <img src="foto_gallery/galeri1.jpg" alt="Image 2">
+        <img src="foto_gallery/galeri2.jpg" alt="Image 3">
+        <img src="foto_gallery/galeri3.jpg" alt="Image 4">
+        <img src="foto_gallery/galeri4.jpg" alt="Image 5">
+        <img src="foto_gallery/galeri5.jpg" alt="Image 6">
+    </div>
+            </div>
+            <div class="text-center py-3">
+                &copy; 2024 Nama Perusahaan. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+        
+    </div> 
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
